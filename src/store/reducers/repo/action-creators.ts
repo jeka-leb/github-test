@@ -24,7 +24,6 @@ export const repoActionCreators = {
                 const persistedLocalStateString = localStorage.getItem(response[1].id.toString());
                 if (persistedLocalStateString) {
                     const persistedState = (JSON.parse(persistedLocalStateString)) as RootState;
-                    console.log(persistedState, response)
                     dispatch(repoActionCreators.setRepo([persistedState.repo.issues, persistedState.repo.repoInfo]));
                 } else {
                     dispatch(repoActionCreators.setRepo(response))

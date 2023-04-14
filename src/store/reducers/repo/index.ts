@@ -49,10 +49,8 @@ export const repo = (state = initialState, action: RepoActions) => {
                     currentData.issue,
                     ...state.issues[targetData.issueType as keyof typeof state.issues].slice(indexToAdd),
                 ];
-                console.log('if', targetData.issue, trelloWithAddedIssue)
             } else {
                 trelloWithAddedIssue = [currentData.issue]
-                console.log('else', currentData.issue, trelloWithAddedIssue)
             }
 
             const result = isTheSameTrello ? {
